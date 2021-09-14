@@ -1,0 +1,201 @@
+#include <iostream>
+#include <bitset>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+//Упражнение 1.
+void ex1_0() {
+	unsigned int n = 0x0;
+	unsigned int mask = 0xE;
+	unsigned int res = (n | mask);
+	cout << "Значение в двоичной сс = " << bitset<32>(res) << endl;
+	cout << "Значение как в десятичной сс = " << res << endl;
+}
+//Упражнение 2.
+void ex2_0() {
+	unsigned int n;
+	cout << "Введите значение n = ";
+	cin >> n;
+	unsigned int mask = 45047;
+	mask = ~mask;
+	unsigned int res = (n & mask);
+	cout << "Значение в двоичной сс = " << bitset<32>(res) << endl;
+	cout << "Значение как в десятичной сс = " << res << endl;
+}
+void ex2_1() {
+	int q;
+
+	for (int i = 0; i < 1; i++) {
+		unsigned int n;
+		srand(time(NULL));
+		n = (rand() % (0 - 4199999999 + 1));
+		unsigned int mask = 45047;
+		mask = ~mask;
+		unsigned int res = (n & mask);
+		cout << "Рандомайзер выдал значение = " << n << endl;
+		cout << "Значение результата в двоичной сс = " << bitset<32>(res) << endl;
+		cout << "Значение результата в десятичной сс = " << res << endl;
+	}
+}
+//Упражнение 3.
+void ex3_0() {
+	unsigned int a;
+	cout << "Введите число ";
+	cin >> a;
+	unsigned int k = 2;
+	unsigned int res = a << k;
+	cout << "Значение в двоичной сс = " << bitset<32>(res) << endl;
+	cout << "Значение как в десятичной сс = " << res << endl;
+};
+void ex3_1() {
+	int q = 1;
+	cout << endl;
+	for (int i = 0; i < q; i++) {
+		unsigned int n;
+		n = (rand() % (0 - 4199999999 + 1));
+		unsigned int k = 2;
+		unsigned int res = n << k;
+		cout << "Рандомайзер выдал значение = " << n << endl;
+		cout << "Значение в двоичной сс = " << bitset<32>(res) << endl;
+		cout << "Значение как в десятичной сс = " << res << endl;
+	}
+}
+//Упражнение 4.
+void ex4_0() {
+	unsigned int n;
+	cout << "Введите число ";
+	cin >> n;
+	unsigned int k = 2;
+	unsigned int res = n >> k;
+	cout << "Значение в двоичной сс = " << bitset<32>(res) << endl;
+	cout << "Значение как в десятичной сс = " << res << endl;
+}
+void ex4_1() {
+	int q = 1;
+	cout << endl;
+	for (int i = 0; i < q; i++) {
+		unsigned int n;
+		n = (rand() % (0 - 4199999999 + 1));
+		unsigned int k = 2;
+		unsigned int res = n >> k;
+		cout << "Рандомайзер выдал значение = " << n << endl;
+		cout << "Значение в двоичной сс = " << bitset<32>(res) << endl;
+		cout << "Значение как в десятичной сс = " << res << endl;
+	}
+}
+//Упражнение 5.
+void ex5_0() {
+	unsigned int n, maska;
+	cout << "Введи число: ";
+	cin >> n;
+	cout << endl;
+	cout << "Какой бит тебе обнулить? ";
+	unsigned int k;
+	cin >> k;
+	cout << endl;
+	bitset<32> x(n);
+	unsigned int mask = 1;
+	for (int i = 0; i < 31; i++) {
+		mask = mask << 1;
+	};
+	for (int i = 31; i > k; i--) {
+		mask = mask >> 1;
+	}
+	mask = ~mask;
+	unsigned int b = n & mask;
+	bitset<32> res(b);
+	cout << "Значение в двоичной сс = " << bitset<32>(res) << endl;
+	cout << "Значение как в десятичной сс = " << res << endl;
+}
+void ex5_1() {
+	int q = 1;
+	cout << endl;
+	for (int i = 0; i < q; i++) {
+		unsigned int n, maska;
+		n = (rand() % (0 - 4000000000 + 1));
+		cout << endl;
+		unsigned int k;
+		k = (rand() % (31 - 0 + 1));
+		cout << endl;
+		bitset<32> x(n);
+		unsigned int mask = 1;
+		for (int i = 0; i < 31; i++) {
+			mask = mask << 1;
+		};
+		for (int i = 31; i > k; i--) {
+			mask = mask >> 1;
+		}
+		mask = ~mask;
+		unsigned int b = n & mask;
+		bitset<32> res(b);
+		cout << "Значение в двоичной сс = " << bitset<32>(res) << endl;
+		cout << "Значение как в десятичной сс = " << res << endl;
+	}
+}
+int main() {
+	setlocale(LC_ALL, "Russian");
+	cout << "Практическая работа №1 Бойко Дмитрий ИНБО-11-20" << endl;
+	cout << "Выберите задание от 1-5" << endl;
+	bool cikl = true;
+	while (cikl == true)
+	{
+		int prg;
+		cin >> prg;
+		switch (prg)
+		{
+		case 1:
+			ex1_0();
+			break;
+		case 2:
+			cout << "Выберите программу: 1-ввод вручную, 2-ввод рандомного значения. ";
+			cin >> prg;
+			cout << endl;
+			if (prg == 1) {
+				ex2_0();
+			}
+			else {
+				ex2_1();
+			}
+			break;
+		case 3:
+			cout << "Выберите программу: 1-ввод вручную, 2-ввод рандомного значения. ";
+			cin >> prg;
+			cout << endl;
+			if (prg == 1) {
+				ex3_0();
+			}
+			else {
+				ex3_1();
+			}
+			break;
+		case 4:
+			cout << "Выберите программу: 1-ввод вручную, 2-ввод рандомного значения. ";
+			cin >> prg;
+			cout << endl;
+			if (prg == 1) {
+				ex4_0();
+			}
+			else {
+				ex4_1();
+			}
+			break;
+		case 5:
+			cout << "Выберите программу: 1-ввод вручную, 2-ввод рандомного значения. ";
+			cin >> prg;
+			cout << endl;
+			if (prg == 1) {
+				ex5_0();
+			}
+			else {
+				ex5_1();
+			}
+			break;
+
+		default:
+			cout << "Недопустимое значение. Выход.";
+			cikl = false;
+			break;
+		}
+
+	}
+}
