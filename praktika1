@@ -176,12 +176,17 @@ int main() {
 			cout << "Выберите программу: " << endl;
 			cout << "1 - ввод вручную. " << endl;
 			cout << "2 - ввод рандомного значения." << endl;
+			cout << "3 - выход." << endl;
 			cin >> prg;
 			cout << endl;
 			if (prg == 1) {
 				ex2_0();
 			}
-			else if (prg==2) {
+			else if (prg == 3) {
+				cikl = false;
+				cout << "Выход." << endl;
+			}
+			else if (prg == 2) {
 				ex2_1();
 			}
 			else {
@@ -201,6 +206,10 @@ int main() {
 					else if (prg == 2) {
 						ex2_1();
 					}
+					else if (prg == 3) {
+						cikl = false;
+						cout << "Выход." << endl;
+					}
 					else {
 						cout << "Ну ты дурак что ли, выход..." << endl;
 						cikl = false;
@@ -216,6 +225,7 @@ int main() {
 			cout << "Выберите программу: " << endl;
 			cout << "1 - ввод вручную. " << endl;
 			cout << "2 - ввод рандомного значения." << endl;
+			cout << "3 - выход." << endl;
 			cin >> prg;
 			cout << endl;
 			if (prg == 1) {
@@ -224,13 +234,17 @@ int main() {
 			else if (prg == 2) {
 				ex3_1();
 			}
+			else if (prg == 3) {
+				cikl = false;
+				cout << "Выход." << endl;
+			}
 			else {
 				cout << "____________________________________________" << endl;
-				cout<<"Введите корректное значение..."<<endl;
-				cout << "____________________________________________" << endl<<endl;
+				cout << "Введите корректное значение..." << endl;
+				cout << "____________________________________________" << endl << endl;
 				switch (prg) {
 				case 3:
-					cout << "Выберите программу: "<<endl;
+					cout << "Выберите программу: " << endl;
 					cout << "1 - ввод вручную. " << endl;
 					cout << "2 - ввод рандомного значения." << endl;
 					cin >> prg;
@@ -241,8 +255,8 @@ int main() {
 					else if (prg == 2) {
 						ex3_1();
 					}
-					else{
-						cout << "Ну ты дурак что ли, выход..."<< endl;
+					else {
+						cout << "Ну ты дурак что ли, выход..." << endl;
 						cikl = false;
 					}
 					break;
@@ -255,6 +269,7 @@ int main() {
 			cout << "Выберите программу: " << endl;
 			cout << "1 - ввод вручную. " << endl;
 			cout << "2 - ввод рандомного значения." << endl;
+			cout << "3 - выход." << endl;
 			cin >> prg;
 			cout << endl;
 			if (prg == 1) {
@@ -262,6 +277,10 @@ int main() {
 			}
 			else if (prg == 2) {
 				ex4_1();
+			}
+			else if (prg == 3) {
+				cikl = false;
+				cout << "Выход." << endl;
 			}
 			else {
 				cout << "____________________________________________" << endl;
@@ -280,6 +299,10 @@ int main() {
 					else if (prg == 2) {
 						ex4_1();
 					}
+					else if (prg == 3) {
+						cikl = false;
+						cout << "Выход." << endl;
+					}
 					else {
 						cout << "Ну ты дурак что ли, выход..." << endl;
 						cikl = false;
@@ -295,6 +318,7 @@ int main() {
 			cout << "Выберите программу: " << endl;
 			cout << "1 - ввод вручную. " << endl;
 			cout << "2 - ввод рандомного значения." << endl;
+			cout << "3 - выход." << endl;
 			cin >> prg;
 			cout << endl;
 			if (prg == 1) {
@@ -302,6 +326,10 @@ int main() {
 			}
 			else if (prg == 2) {
 				ex5_1();
+			}
+			else if (prg == 3) {
+				cikl = false;
+				cout << "Выход."<< endl;
 			}
 			else {
 				cout << "____________________________________________" << endl;
@@ -320,6 +348,10 @@ int main() {
 					else if (prg == 2) {
 						ex5_1();
 					}
+					else if (prg == 3) {
+						cikl = false;
+						cout << "Выход." << endl;
+					}
 					else {
 						cout << "Ну ты дурак что ли, выход..." << endl;
 						cikl = false;
@@ -329,13 +361,15 @@ int main() {
 					break;
 				}
 				break;
+				
 			}
+			break;
 
 		default:
-			cout << "Недопустимое значение. Выход."<<endl<<"____________________________________________"<<endl;
+			cout << "Недопустимое значение. Выход." << endl << "____________________________________________" << endl;
 			cikl = false;
 			break;
 		}
-
+	
 	}
 }
